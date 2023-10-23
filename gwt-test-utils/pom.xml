@@ -10,7 +10,7 @@
     </parent>
     <dependencies>
         <dependency>
-            <groupId>com.google.gwt</groupId>
+            <groupId>${gwt.groupid}</groupId>
             <artifactId>gwt-dev</artifactId>
         </dependency>
         <dependency>
@@ -48,12 +48,12 @@
             <artifactId>jackson-core-asl</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.gwt</groupId>
+            <groupId>${gwt.groupid}</groupId>
             <artifactId>gwt-user</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.gwt</groupId>
+            <groupId>${gwt.groupid}</groupId>
             <artifactId>gwt-servlet</artifactId>
             <scope>provided</scope>
         </dependency>

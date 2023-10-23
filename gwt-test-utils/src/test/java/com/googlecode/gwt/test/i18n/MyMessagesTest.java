@@ -6,6 +6,7 @@ import com.googlecode.gwt.test.GwtTestTest;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;

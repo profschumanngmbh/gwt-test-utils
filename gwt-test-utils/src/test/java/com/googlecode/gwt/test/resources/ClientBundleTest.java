@@ -174,20 +174,6 @@ public class ClientBundleTest extends GwtTestTest {
     }
 
     @Test
-    public void textResource_FromGwtAPI() {
-        // Given
-        com.google.gwt.user.client.impl.WindowImplIE.Resources treeResources = GWT.create(com.google.gwt.user.client.impl.WindowImplIE.Resources.class);
-
-        // When
-        String name = treeResources.initWindowCloseHandler().getName();
-        String text = treeResources.initWindowCloseHandler().getText();
-
-        // Then
-        assertThat(name).isEqualTo("initWindowCloseHandler");
-        assertThat(text.startsWith("function __gwt_initWindowCloseHandler(beforeunload, unload) {")).isTrue();
-    }
-
-    @Test
     public void textResource_Txt() {
         // Given
         TextResource textResource = MyClientBundle.INSTANCE.textResourceTxt();
