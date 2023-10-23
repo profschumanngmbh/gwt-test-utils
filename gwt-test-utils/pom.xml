@@ -12,6 +12,12 @@
         <dependency>
             <groupId>${gwt.groupid}</groupId>
             <artifactId>gwt-dev</artifactId>
+            <exclusions>
+              <exclusion>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
