@@ -1,5 +1,21 @@
 package com.googlecode.gwt.test.csv.runner;
 
+import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Fail.fail;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gwt.event.shared.UmbrellaException;
 import com.googlecode.gwt.test.csv.CsvMethod;
 import com.googlecode.gwt.test.csv.GwtCsvTest;
@@ -8,17 +24,6 @@ import com.googlecode.gwt.test.finder.Node;
 import com.googlecode.gwt.test.finder.ObjectFinder;
 import com.googlecode.gwt.test.internal.BrowserSimulatorImpl;
 import com.googlecode.gwt.test.utils.GwtReflectionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.*;
-import java.util.Map.Entry;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Fail.fail;
 
 public class CsvRunner {
 
@@ -149,15 +154,15 @@ public class CsvRunner {
         int lineExecuted = 0;
         lineNumber = 0;
         for (List<String> row : sheet) {
-            if (row != null && row.size() > 0 && "start".equals(row.get(0))) {
-                execute = true;
+            if (row != null && row.size() > 0 && "stop".equals(row.get(0))) {
+                execute = false;
             }
             if (execute) {
                 executeRow(row, fixture);
                 lineExecuted++;
             }
-            if (row != null && row.size() > 0 && "stop".equals(row.get(0))) {
-                execute = false;
+            if (row != null && row.size() > 0 && "start".equals(row.get(0))) {
+                execute = true;
             }
             lineNumber++;
         }
