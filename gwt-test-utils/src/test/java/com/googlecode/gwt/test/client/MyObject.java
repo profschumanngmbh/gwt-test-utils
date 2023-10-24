@@ -1,16 +1,16 @@
 package com.googlecode.gwt.test.client;
 
-import com.google.gwt.user.client.rpc.IsSerializable;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.gwt.user.client.rpc.IsSerializable;
 
 public class MyObject implements IsSerializable, Serializable {
 
     private static final long serialVersionUID = -6459796225189554335L;
 
-    private final List<MyChildObject> myChildObjects = new ArrayList<>();
+    private List<MyChildObject> myChildObjects = new ArrayList<>();
     private String myField;
     private transient String myTransientField = "transient field";
 
